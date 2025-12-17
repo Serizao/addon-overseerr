@@ -20,7 +20,26 @@ comparison to installing any other Home Assistant add-on.
 
 ## Configuration
 
-_This add-on does not require any configuration to run._
+This add-on provides configuration options to resolve IPv4/IPv6 connectivity issues.
+
+### Option: `host`
+
+The IP address that Overseerr binds to. Default is `0.0.0.0` (all interfaces).
+
+### Option: `prefer_ipv4`
+
+When enabled (default: `true`), forces Node.js to prefer IPv4 addresses when 
+resolving DNS. This fixes the common issue where `localhost` resolves to `::1` 
+(IPv6) instead of `127.0.0.1` (IPv4), causing connection refused errors.
+
+**If you see errors like `ECONNREFUSED ::1:5055`, make sure this option is enabled.**
+
+### Example configuration
+
+```yaml
+host: "0.0.0.0"
+prefer_ipv4: true
+```
 
 ## Changelog & Releases
 

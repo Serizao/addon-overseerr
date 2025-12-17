@@ -1,4 +1,26 @@
-# Home Assistant Community Add-on: Overseerr
+# Home Assistant Add-on: Overseerr (IPv4 Fixed)
+
+**This is a modified version of the official Overseerr add-on with IPv4/IPv6 connectivity fixes.**
+
+## Installation
+
+1. Add this repository to your Home Assistant Add-on Store:
+   - Go to **Settings → Add-ons → Add-on Store**
+   - Click **⋮** (three dots menu) → **Repositories**
+   - Add this URL: `https://github.com/YOUR_USERNAME/addon-overseerr-ipv4`
+   - Click **Add** → **Close**
+
+2. Find "Overseerr" in the add-on store and install it
+
+3. In the **Configuration** tab, ensure `prefer_ipv4: true` is set
+
+## What's Fixed
+
+This version adds a `prefer_ipv4` configuration option that forces Node.js to use IPv4 addresses when resolving DNS. This fixes the `ECONNREFUSED ::1:5055` error that occurs when `localhost` resolves to IPv6 instead of IPv4.
+
+---
+
+# Original README: Home Assistant Community Add-on: Overseerr
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]

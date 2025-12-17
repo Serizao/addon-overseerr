@@ -1,6 +1,6 @@
 ---
 name: Overseerr
-version: dev
+version: 0.2.0
 slug: overseerr
 description: Request management and media discovery tool for the Plex ecosystem
 url: https://github.com/hassio-addons/addon-overseerr/tree/main/README.md
@@ -17,3 +17,9 @@ map:
   - media:rw
 ports:
   5055/tcp: 5055
+options:
+  host: "0.0.0.0"
+  prefer_ipv4: true
+schema:
+  host: str
+  prefer_ipv4: bool
