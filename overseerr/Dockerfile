@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG OVERSEERR_VERSION=1.34.0
+ARG OVERSEERR_VERSION=1.35.0
 ENV COMMIT_TAG=v${OVERSEERR_VERSION}
 # hadolint ignore=DL3003,DL3042,DL3018
 RUN \
@@ -18,7 +18,7 @@ RUN \
     python3 \
   \
   && curl -J -L -o /tmp/overseerr.tar.gz \
-      "https://github.com/sct/overseerr/archive/v${OVERSEERR_VERSION}.tar.gz" \
+      "https://github.com/serizao/overseerr/archive/${OVERSEERR_VERSION}.tar.gz" \
   && tar zxvf \
       /tmp/overseerr.tar.gz \
       --strip 1 -C /opt \
